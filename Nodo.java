@@ -1,7 +1,7 @@
 public class Nodo implements Comparable<Nodo> {
 
     private char caracter;
-    private int frecuencia;
+    private Integer frecuencia;
 
     Nodo izquierdo;
     Nodo derecho;
