@@ -13,8 +13,27 @@ public class Nodo implements Comparable<Nodo> {
         this.izquierdo = null;
     }
 
+    public Nodo(int suma, Nodo izquierdo2, Nodo derecho2) {
+        //TODO Auto-generated constructor stub
+    }
+
     @Override
     public int compareTo(Nodo other){
         return Integer.compare(this.frecuencia, other.frecuencia);
+    }
+    public char getCaracter() {
+        return caracter;
+    }
+
+    public Integer getFrecuencia() {
+        return frecuencia;
+    }
+
+    public Nodo getIzquierdo() {
+        return izquierdo;
+    }
+
+    public Nodo getDerecho() {
+        return derecho;
     }
 }
