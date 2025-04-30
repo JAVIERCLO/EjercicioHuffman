@@ -14,7 +14,10 @@ public class Nodo implements Comparable<Nodo> {
     }
 
     public Nodo(int suma, Nodo izquierdo2, Nodo derecho2) {
-        //TODO Auto-generated constructor stub
+        this.caracter = '\0';  
+        this.frecuencia = suma;
+        this.izquierdo = izquierdo2;
+        this.derecho = derecho2;
     }
 
     @Override

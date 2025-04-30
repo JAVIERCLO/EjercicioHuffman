@@ -22,14 +22,13 @@ public class ArbolDeHuffman {
         }
 
         PriorityQueue<Nodo> cola = new PriorityQueue<>();
-        // Aquí la clave y el valor deben ser de tipo Character y Integer respectivamente
         MapaFrecuencias.forEach((caracter, frecuencia) -> cola.add(new Nodo(caracter, frecuencia)));
 
         while (cola.size() > 1) {
-            Nodo izquierdo = cola.poll();  // Primer nodo con menor frecuencia
-            Nodo derecho = cola.poll();    // Segundo nodo con menor frecuencia
-            int suma = izquierdo.getFrecuencia() + derecho.getFrecuencia(); // La suma de las frecuencias
-            cola.add(new Nodo(suma, izquierdo, derecho));  // Agregar nuevo nodo interno
+            Nodo izquierdo = cola.poll();
+            Nodo derecho = cola.poll();
+            int suma = izquierdo.getFrecuencia() + derecho.getFrecuencia();
+            cola.add(new Nodo(suma, izquierdo, derecho));
         }
 
         // Esta es la raíz del árbol
@@ -46,7 +45,7 @@ public class ArbolDeHuffman {
             CodigoHuffman.put(nodo.getCaracter(), codigo);
         }
 
-        // Recursión para los nodos izquierdo y derecho
+        //Para los nodos izuiqerdo y derecho
         CodificarHuffman(nodo.izquierdo, codigo + "0", CodigoHuffman);
         CodificarHuffman(nodo.derecho, codigo + "1", CodigoHuffman);
     }
@@ -66,7 +65,6 @@ public class ArbolDeHuffman {
         for (int i = 0; i < TextoComprimido.length(); i++) {
             currentNode = (TextoComprimido.charAt(i) == '0') ? currentNode.izquierdo : currentNode.derecho;
 
-            // Si llegamos a un nodo hoja, añadimos el carácter y volvemos a la raíz
             if (currentNode.izquierdo == null && currentNode.derecho == null) {
                 TextoDescomprimido.append(currentNode.getCaracter());
                 currentNode = raiz;
